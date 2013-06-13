@@ -2,7 +2,7 @@
 	<head>
 		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, minimum-scale=1,  maximum-scale=1"/> 
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-
+		<script src="phonegap.js"></script>
 		<link rel="stylesheet" href="../common/css/themes/blanc.min.css" />
 		<link rel="stylesheet" href="../common/css/jquery.mobile.structure-1.3.1.min.css" /> 
 		<script src="../common/js/jquery-1.9.1.min.js"> </script>
@@ -17,43 +17,20 @@
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=true&amp;libraries=places"> </script>	
 		<script type="text/javascript" src="js/jsMenu.js"></script>
 		<style>
-
-			#button_menu {
-				float: right; 
-				margin-right:5px;
-				padding-right: 2px;
-				text-align: center;
-				width: 20%; 
-				background-color: #222222;
-			}
-			#button_menu ul {
-				color:#fafafa;
-				list-style-type: none;
-				text-align: right;
-				min-height: 10%;
-				border: 2px;
-			}
-			#button_menu li {
-				color:#fafafa;
-				list-style-type: none;
-				text-align: right;
-				min-height: 10%;
-				border: 2px;
-			}
-			
 			.adp-directions {
 	  			  border-collapse: collapse;
 	  			  color: #FFFFFF;
 	  			  cursor: pointer;
 			}
 			
-			#page_menu {
-				width: 75%; 
-				background-color: #000;
-				float: left;
-				color: #fafafa !important;
+			#listebeta li{
+				background-image: url('css/menu.jpg');
+				background-repeat: no-repeat;
+				text-color:#000;
 			}
-		
+			.icons{
+			float:left;
+			}
 			#mapholder {
 				padding-bottom:2px;
 				margin-top:1px;
@@ -74,7 +51,7 @@
 			}
 			.adp-step, .adp-substep{
 				background-color:#000;
-				color: #fafafa;
+				text-color: #fafafa;
 			}
 			#page_footer {
 				height: 3% !important;
@@ -114,24 +91,19 @@
 		<div id="page_layout">
 			<div class="ui-body-a" id="pdate"></div>
 			<div class="ui-body-a" id="Rname"></div>
-
-			<div id="page_menu">
-				<div id="lundi" class="ui-li" data-role="listview" data-inset="true"></div>
-				<div id="mardi" class="ui-li" data-role="listview" data-inset="true"></div>
-				<div id="mercredi" class="ui-li" data-role="listview" data-inset="true"></div>
-				<div id="jeudi" class="ui-li" data-role="listview" data-inset="true"></div>
-				<div id="vendredi" class="ui-li" data-role="listview" data-inset="true"></div>
-			</div>
-			<div id="button_menu">
-				<ul>
-					<li><a id="blundi" data-transition="slide"  data-inset="true" data-ajax="false"> <img src="css/left.png"></img>Lundi</a></li>
-					<li><a id="bmardi" data-transition="slide"  data-inset="true" data-ajax="false"> <img src="css/left.png"></img>Mardi</a></li>							
-					<li><a id="bmercredi" data-transition="slide"  data-inset="true" data-ajax="false"> <img src="css/left.png"></img>Mercredi</a></li>							
-					<li><a id="bjeudi" data-transition="slide"  data-inset="true" data-ajax="false"> <img src="css/left.png"></img>Jeudi</a></li>						
-					<li><a id="bvendredi" data-transition="slide"  data-inset="true" data-ajax="false"><img src="css/left.png"></img>Vendredi</a></li>							
-				</ul>
-			</div>
-			<div style="height: 10px; width: 100%; clear: both;"></div>
+			<table id="textmenu">
+				<tr>
+					<td id="btnlast" class="backicons" data-transition="slide" data-ajax="false">
+						<a href="#menupage"><img src="css/left.png"></img></a>
+					</td>
+					<td>	
+						<ul id="listebeta" data-role="listview" data-inset="true"></ul>
+					</td>
+					<td id="btnnext" class="backicons" data-transition="slide" data-ajax="false">
+						<a href="#menupage"><img src="css/right.png"></img></a>
+					</td>
+				</tr>
+			</table>
 			<div class="ui-body-a" id="address"></div>
 			<div id="itineraire">	
 		 		 <div id="mapholder"></div>
